@@ -2,6 +2,7 @@ package com.example.project_trpp;
 
 import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +20,8 @@ public class MainActivity extends AppCompatActivity implements WeightFragment.We
 
     private TextView waterGoalTextView;
     private TextView waterAmountTextView;
-    private Button weightButton;
-    private Button drinkButton;
+    private ImageButton weightButton;
+    private ImageButton drinkButton;
 
     private SharedPreferences sharedPreferences;
 
@@ -60,18 +61,19 @@ public class MainActivity extends AppCompatActivity implements WeightFragment.We
 
     private void calculateWaterGoal() {
         int waterGoal = weight * 50;
-        waterGoalTextView.setText("Цель: " + waterGoal + " мл в день");
+        waterGoalTextView.setText(waterGoal + " мл");
     }
 
     private void drinkWater() {
         waterAmount += 250;
-        waterAmountTextView.setText("Выпито: " + waterAmount + " мл");
+        waterAmountTextView.setText(waterAmount + " мл");
     }
 
     private void showWeightDialog() {
         WeightFragment weightFragment = new WeightFragment();
         weightFragment.show(getSupportFragmentManager(), "weightDialog");
     }
+
 
     @Override
     public void onWeightEntered(int weight) {

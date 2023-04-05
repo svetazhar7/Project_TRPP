@@ -27,7 +27,10 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.6.1'

@@ -5,29 +5,29 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_medium"
-        android:text="ВАШИ ДАННЫЕ:"
+        android:text="ВВЕДИТЕ КОЛИЧЕСТВО МЛ:"
         android:textAlignment="center"
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/weight_edit_text"
+        android:id="@+id/ml_edit_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
         android:background="@drawable/shape2"
         android:fontFamily="@font/roboto_light"
-        android:hint="Введите ваш вес в кг"
+        android:hint="Объем выпитой воды, мл"
         android:inputType="number"
         android:padding="16dp"
         android:textAlignment="center" />
 
     <Button
-        android:id="@+id/save_button"
+        android:id="@+id/save_button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -36,6 +36,6 @@
         android:backgroundTintMode="add"
         android:fontFamily="@font/raleway_black"
         android:padding="16dp"
-        android:text="Сохранить данные" />
+        android:text="Добавить воду" />
 
 </LinearLayout>

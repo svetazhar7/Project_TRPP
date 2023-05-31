@@ -86,6 +86,7 @@ public class WeightFragment extends DialogFragment {
     @Override
     public void onResume() {
 
+        super.onResume();
         int width = getResources().getDimensionPixelSize(R.dimen.dialog_weight_width);
         int height = getResources().getDimensionPixelSize(R.dimen.dialog_weight_height);
         getDialog().getWindow().setLayout(width, height);

@@ -6,6 +6,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationManagerCompat;
+
 import android.os.Bundle;
 
 import android.view.View;
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements WeightFragment.We
     private ImageButton ml300btn;
     private ImageButton ml500btn;
     private ImageButton deletebtn;
+    private ImageButton ntfbtn;
     /**
 
      The ImageButton that increments the amount of water consumed.
@@ -155,6 +158,7 @@ public class MainActivity extends AppCompatActivity implements WeightFragment.We
         ml300btn = findViewById(R.id.btn_300ml);
         ml500btn = findViewById(R.id.btn_500ml);
         deletebtn = findViewById(R.id.deleteWater);
+        ntfbtn= findViewById(R.id.ntf_btn);
         sharedPreferences = getPreferences(MODE_PRIVATE);
 
         weight = sharedPreferences.getInt("weight", 0);
@@ -237,6 +241,13 @@ public class MainActivity extends AppCompatActivity implements WeightFragment.We
                 editor.apply();
             }
         });
+        ntfbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NotificationFragment notificationFragment = new NotificationFragment();
+                notificationFragment.show(getSupportFragmentManager(), "notificationFragment");
+            }
+        });
     }
 
     private void showWaterAddingDialog() {
@@ -248,7 +259,7 @@ public class MainActivity extends AppCompatActivity implements WeightFragment.We
      * Calculates the daily water goal based on the user's weight and updates the UI.
      */
     private void calculateWaterGoal() {
-        waterGoal = weight * 25;
+        waterGoal = weight * 40;
         waterAmountTextView.setText(waterAmount+"/"+waterGoal +" мл");
     }
 

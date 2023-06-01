@@ -27,7 +27,7 @@ public class WaterAddingFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ml, container, false);
         mlEditText = view.findViewById(R.id.ml_edit_text);
-        saveButton = view.findViewById(R.id.save_button2);
+        saveButton = view.findViewById(R.id.hour);
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
